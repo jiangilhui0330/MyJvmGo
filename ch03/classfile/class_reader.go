@@ -14,18 +14,18 @@ func (self *ClassReader) readUint8() uint8 {
 }
 
 func (self *ClassReader) readUint16() uint16 {
-	val := binary.BigEndian.Unit16(self.data)
+	val := binary.BigEndian.Uint16(self.data)
 	self.data = self.data[2:]
 	return val
 }
 
 func (self *ClassReader) readUint32() uint32 {
-	val := binary.BigEndian.Unit32(self.data)
+	val := binary.BigEndian.Uint32(self.data)
 	self.data = self.data[4:]
 	return val
 }
 func (self *ClassReader) readUint64() uint64 {
-	val := binary.BigEndian.Unit64(self.data)
+	val := binary.BigEndian.Uint64(self.data)
 	self.data = self.data[8:]
 	return val
 }

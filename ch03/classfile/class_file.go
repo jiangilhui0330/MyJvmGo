@@ -4,8 +4,8 @@ import "fmt"
 
 type ClassFile struct {
 	// magic uint 32
-	minorVersion uint 16
-	majorVersion uint 16
+	minorVersion uint16
+	majorVersion uint16
 	constantPool ConstantPool
 	accessFlags uint16
 	thisClass uint16
@@ -100,7 +100,7 @@ func (self *ClassFile) SuperClassName() string {
 func (self *ClassFile) InterfaceNames() []string {
 	interfaceNames := make([]string, len(self.interfaces))
 	for i, cpIndex := range self.interfaces {
-		interfaceName[i] = self.constantPool.getClassName(cpIndex)
+		interfaceNames[i] = self.constantPool.getClassName(cpIndex)
 	}
 	return interfaceNames
 }
